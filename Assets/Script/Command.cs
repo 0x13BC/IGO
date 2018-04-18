@@ -18,6 +18,7 @@ public class Command : MonoBehaviour {
 	void Update () {
 		var y=0f;
         var z=0f;
+		
 		if(Input.GetKeyDown("up")||Input.GetKeyDown("down"))
 		{
 			if(Input.GetKeyDown("up"))
@@ -33,6 +34,7 @@ public class Command : MonoBehaviour {
 			else
 				y = -90.0f;
 		}
+		
 		
         player.transform.Translate(0, 0, z);
 		player.transform.Rotate(0, y, 0);

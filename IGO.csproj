@@ -240,6 +240,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\CameraMove.cs" />
     <Compile Include="Assets\Script\Command.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />
   </ItemGroup>
