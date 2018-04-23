@@ -10,6 +10,8 @@ public class Command : MonoBehaviour {
 	public GameObject player = null;
 	public int posx,posz;
 	float rot = 0.00f;
+	float timer = 0.0f;
+	int tour = 0;
 	
 	// Use this for initialization
 	void Start () {
@@ -21,6 +23,7 @@ public class Command : MonoBehaviour {
 	void Update () {
 		var y=0f;
         var z=0f;
+		
 		var toto = player.transform.position.z; // C'est Good ca!!!!
 		
 		if(Input.GetKeyDown("up")||Input.GetKeyDown("down"))
@@ -59,7 +62,22 @@ public class Command : MonoBehaviour {
 				rot = 0;
 			}
 		}
-		
+			// timer += Time.deltaTime;
+			// int seconds =(int) (timer % 60);
+			
+			// if(seconds == 1)
+			// {
+				// tour++;
+				// if(tour == 3)
+				// {
+					// tour = 0;
+					// y = 90.00f;
+				// }
+				// z = 12.00f;
+			 // timer = 0.00f;
+			 
+			// }
+				
 		
         player.transform.Translate(0, 0, z);
 		player.transform.Rotate(0, y, 0);
