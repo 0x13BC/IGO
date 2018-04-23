@@ -20,6 +20,7 @@ public class CameraMove : MonoBehaviour {
 		
 		if(Input.GetKeyDown(KeyCode.R) && !rot)
 			{
+				Debug.Log("Titi");
 			//saveRot;
 			rot = true;
 			saveRot = 0f;
