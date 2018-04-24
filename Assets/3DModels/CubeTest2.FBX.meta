@@ -1,44 +1,16 @@
 fileFormatVersion: 2
-guid: 0bbea142b9dac254a81b15464b7dd586
-timeCreated: 1523975442
+guid: 14acd5a9b87c57640a5abe92b64402b8
+timeCreated: 1524517300
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Cylinder001
-    100004: Object001
-    100006: Object002
-    100008: Object003
-    100010: Object004
-    100012: Star001
     400000: //RootNode
-    400002: Cylinder001
-    400004: Object001
-    400006: Object002
-    400008: Object003
-    400010: Object004
-    400012: Star001
-    2100000: tronc
-    2100002: feuilles
-    2300000: Cylinder001
-    2300002: Object001
-    2300004: Object002
-    2300006: Object003
-    2300008: Object004
-    2300010: Star001
-    3300000: Cylinder001
-    3300002: Object001
-    3300004: Object002
-    3300006: Object003
-    3300008: Object004
-    3300010: Star001
-    4300000: Cylinder001
-    4300002: Star001
-    4300004: Object001
-    4300006: Object002
-    4300008: Object003
-    4300010: Object004
+    2100000: 'Material #27'
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Box003
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -70,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.2
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -89,7 +61,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

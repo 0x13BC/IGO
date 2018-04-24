@@ -5,6 +5,8 @@ using UnityEngine;
 public class Robot : Element {
 
 	public int rotation = 0;
+
+	
 	// Use this for initialization
 	void Start () {
 		

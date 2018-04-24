@@ -1,23 +1,46 @@
 fileFormatVersion: 2
-guid: 5dbd3e3ef5be0a24a9aeb566fec2bb29
-timeCreated: 1524419623
+guid: 0bbea142b9dac254a81b15464b7dd586
+timeCreated: 1523975442
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Cylinder001
+    100004: Object001
+    100006: Object002
+    100008: Object003
+    100010: Object004
+    100012: Star001
     400000: //RootNode
-    2100000: 'Material #27'
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Box003
+    400002: Cylinder001
+    400004: Object001
+    400006: Object002
+    400008: Object003
+    400010: Object004
+    400012: Star001
+    2100000: tronc
+    2100002: feuilles
+    2300000: Cylinder001
+    2300002: Object001
+    2300004: Object002
+    2300006: Object003
+    2300008: Object004
+    2300010: Star001
+    3300000: Cylinder001
+    3300002: Object001
+    3300004: Object002
+    3300006: Object003
+    3300008: Object004
+    3300010: Star001
+    4300000: Cylinder001
+    4300002: Star001
+    4300004: Object001
+    4300006: Object002
+    4300008: Object003
+    4300010: Object004
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 'Material #27'
-    second: {fileID: 2100000, guid: dbef5a26f42526f49b2d19dbc2c44a31, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

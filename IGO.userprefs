@@ -1,8 +1,9 @@
 ﻿<Properties StartupItem="IGO.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Command.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Board.cs">
     <Files>
       <File FileName="Assets\Script\Command.cs" Line="64" Column="1" />
+      <File FileName="Assets\Script\Board.cs" Line="21" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
