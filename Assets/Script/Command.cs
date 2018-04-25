@@ -97,7 +97,11 @@ public class Command : MonoBehaviour {
 				execute();
 			}
 			//execute();
-			
+			if(Input.GetKeyDown(KeyCode.Backspace))
+			{
+				
+				RemoveOrder();
+			}
 				
 		
         //player.transform.Translate(0, 0, z);
@@ -257,6 +261,16 @@ public class Command : MonoBehaviour {
 	
 	void jump()
 	{
+		
+	}
+	
+	void RemoveOrder()
+	{
+		if(commandList.Count!=0)
+		{
+			Debug.Log("Derniere Action supprimee");
+			commandList.RemoveAt(commandList.Count - 1);
+		}
 		
 	}
 	
