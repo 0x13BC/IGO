@@ -1,35 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 using UnityEngine.EventSystems;
 
-public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
-
+public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+{
     public static GameObject itemBeingDragged;
     Vector3 startPosition;
     Transform startParent;
 
     #region IBeginDragHandler implementation
 
-    public void OnBeginDrag (PointerEventData eventData)
+    public void OnBeginDrag(PointerEventData eventData)
     {
         itemBeingDragged = gameObject;
         startPosition = transform.position;
         startParent = transform.parent;
         GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
-    #endregion
 
-    //mouse input
+    #endregion
 
     #region IDragHandler implementation
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = Input.mousePosition;
+        transform.position = eventData.position;
     }
-    #endregion
 
+    #endregion
 
     #region IEndDragHandler implementation
 
@@ -37,10 +35,14 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         itemBeingDragged = null;
         GetComponent<CanvasGroup>().blocksRaycasts = true;
-        if (transform.parent != startParent)
+        if (transform.parent == startParent)
         {
             transform.position = startPosition;
         }
     }
+
     #endregion
+
+
+
 }

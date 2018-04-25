@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 using UnityEngine.EventSystems;
 
-public class Slor : MonoBehaviour, IDropHandler {
-
-	public GameObject item
+public class Slot : MonoBehaviour, IDropHandler
+{
+    public GameObject item
     {
         get
         {
@@ -18,11 +17,11 @@ public class Slor : MonoBehaviour, IDropHandler {
     }
 
     #region IDropHandler implementation
-    public void OnDrop (PointerEventData eventData)
+    public void OnDrop(PointerEventData eventData)
     {
         if (!item)
         {
-            DragHandeler.itemBeingDragged.transform.SetParent(transform);
+            Drag.itemBeingDragged.transform.SetParent(transform);
             
         }
     }
