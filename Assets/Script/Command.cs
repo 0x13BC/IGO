@@ -122,9 +122,7 @@ public class Command : MonoBehaviour {
 		foreach (CommandMethod func in commandList)
 			func();
 		ClearListCmd();
-       
-
-    }
+	}
 	public void takeList()
 	{
 		CreateListCmd(listOrder.order);
@@ -149,9 +147,9 @@ public class Command : MonoBehaviour {
 			commandList.Add(rotateL);
 			break;
 		
-		case "action":
-			commandList.Add(action);
-			break;
+		//case "action":
+			//commandList.Add(action);
+			//break;
 		}
 	}
 	
@@ -172,6 +170,7 @@ public class Command : MonoBehaviour {
 		{
 			//Debug.Log("Walkable");
 			player.transform.Translate(0,0,0.6f);
+			action();
 			switch(rot)
 			{
 				case 0:
@@ -217,7 +216,7 @@ public class Command : MonoBehaviour {
 	
 	void action()
 	{
-		//Debug.Log("Action");
+		Debug.Log("Action");
 		switch(rot)
 			{
 				case 0:
@@ -228,7 +227,6 @@ public class Command : MonoBehaviour {
 						grid[posx+1,posz] = 0;
 						grid[posx+2,posz] = 3;
 						Dechet.transform.Translate(0.0f,-0.600f,0f );
-						move();
 					}
 					}
 					
@@ -241,7 +239,6 @@ public class Command : MonoBehaviour {
 						grid[posx,posz+1] = 0;
 						grid[posx,posz+2] = 3;
 						Dechet.transform.Translate(0.600f,0.000f,0.000f );
-						move();
 					}
 					}
 					
@@ -255,7 +252,6 @@ public class Command : MonoBehaviour {
 							grid[posx-1,posz]=0;
 							grid[posx-2,posz]=3;
 							Dechet.transform.Translate(0f,0.600f,0f);
-							move();
 						}
 					}
 					
@@ -268,7 +264,6 @@ public class Command : MonoBehaviour {
 							grid[posx,posz-1]=0;
 							grid[posx,posz-2]=3;
 							Dechet.transform.Translate(-0.600f,0f,0f);
-							move();
 						}
 					}
 				break;
@@ -293,8 +288,6 @@ public class Command : MonoBehaviour {
 	{
 		SceneManager.LoadScene("grid", LoadSceneMode.Single);
 	}
-
-
 	
 	bool walkable()
 	{
@@ -307,8 +300,9 @@ public class Command : MonoBehaviour {
 						result =false;
 					if(posx < 3)
 					{
-						if(grid[posx+1,posz]== 2|| grid[posx+1,posz]== 3)
+						if(grid[posx+1,posz]== 2 || grid[posx+1,posz]== 3 && posx+1==3)
 						{
+							
 							result = false;
 						}
 							
@@ -320,8 +314,9 @@ public class Command : MonoBehaviour {
 						result =false;
 					if(posz < 3)
 					{
-						if(grid[posx,posz+1]== 2|| grid[posx,posz+1]== 3)
+						if(grid[posx,posz+1]== 2 || grid[posx,posz+1]== 3 && posz+1==3)
 						{
+							
 							result = false;
 						}
 					}
@@ -332,8 +327,9 @@ public class Command : MonoBehaviour {
 						result =false;
 					if(posx > 0)
 					{
-						if(grid[posx-1,posz]== 2 || grid[posx-1,posz]== 3)
+						if(grid[posx-1,posz]== 2 || grid[posx-1,posz]== 3 && posx-1==0)
 						{
+						
 							result = false;
 						}
 					}
@@ -344,8 +340,9 @@ public class Command : MonoBehaviour {
 						result =false;
 					if(posz > 0)
 					{
-						if(grid[posx,posz-1]== 2 || grid[posx,posz-1]== 3)
+						if(grid[posx,posz-1]== 2 || grid[posx,posz-1]== 3 && posz-1==0)
 						{
+						
 							result = false;
 						}
 					}
