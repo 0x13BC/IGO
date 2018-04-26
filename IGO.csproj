@@ -246,6 +246,7 @@
     <Compile Include="Assets\Script\Drag.cs" />
     <Compile Include="Assets\Script\Element.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
+    <Compile Include="Assets\Script\Inventory.cs" />
     <Compile Include="Assets\Script\Item.cs" />
     <Compile Include="Assets\Script\MainMenu.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />

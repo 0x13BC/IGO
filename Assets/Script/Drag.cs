@@ -38,6 +38,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         if (transform.parent == startParent)
         {
             transform.position = startPosition;
+			//Debug.Log("Je suis dans le vide");
         }
     }
 

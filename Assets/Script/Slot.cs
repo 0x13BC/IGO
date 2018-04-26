@@ -10,7 +10,9 @@ public class Slot : MonoBehaviour, IDropHandler
         {
             if (transform.childCount > 0)
             {
+				//Debug.Log("Mon Cul");
                 return transform.GetChild(0).gameObject;
+				
             }
             return null;
         }
@@ -21,7 +23,9 @@ public class Slot : MonoBehaviour, IDropHandler
     {
         if (!item)
         {
+			//Debug.Log("CHild: "+transform.childCount);
             Drag.itemBeingDragged.transform.SetParent(transform);
+			ExecuteEvents.ExecuteHierarchy<IHasChanged>(gameObject, null,(x,y) => x.HasChanged());
             
         }
     }

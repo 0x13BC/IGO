@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class Command : MonoBehaviour {
@@ -10,6 +11,8 @@ public class Command : MonoBehaviour {
 	public GameObject player = null;
 	public int posx,posz;
 	public GameObject Dechet;
+	public Inventory listOrder = null;
+	
 	int rot = 0; // 0 Nord, 1 Est, 2 Sud,3 Ouest 
 	float lengthmouv= 0.6f;
 	float timer = 0.0f;
@@ -44,10 +47,10 @@ public class Command : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		var y=0f;
-        var z=0f;
+		//var y=0f;
+        //var z=0f;
 		
-		var toto = player.transform.position.z; // C'est Good ca!!!!
+		//var toto = player.transform.position.z; // C'est Good ca!!!!
 		
 			if(Input.GetKeyDown("up"))
 			{
@@ -113,27 +116,38 @@ public class Command : MonoBehaviour {
 			Debug.Log("BRAVOOOO!!!");
 	}
 	
-	void execute()
+	public void execute()
 	{
 		Debug.Log("Exec");
 		foreach (CommandMethod func in commandList)
 			func();
 		ClearListCmd();
 	}
-	void CreateListCmd( List <int> tab)
+	public void takeList()
 	{
-		foreach(int order in tab)
+		CreateListCmd(listOrder.order);
+	}
+	
+	void CreateListCmd( List <string> tab)
+	{
+		foreach(string order in tab)
+		Debug.Log(order);
+		foreach(string order in tab)
 		switch (order)
 		{
-			case 1:
+			case "move":
 			commandList.Add(move);
 			break;
 		
-		case 2:
+		case "rotateR":
 			commandList.Add(rotateR);
 			break;
+			
+		case "rotateL":
+			commandList.Add(rotateL);
+			break;
 		
-		case 3:
+		case "action":
 			commandList.Add(action);
 			break;
 		}
@@ -149,12 +163,12 @@ public class Command : MonoBehaviour {
 	
 	void move()
 	{
-		Debug.Log("Move");
+		//Debug.Log("Move");
 		//Instantiate something;
 		
 		if(walkable())
 		{
-			Debug.Log("Walkable");
+			//Debug.Log("Walkable");
 			player.transform.Translate(0,0,0.6f);
 			switch(rot)
 			{
@@ -171,37 +185,37 @@ public class Command : MonoBehaviour {
 					posz--;
 				break;
 			}
-			Debug.Log("Posx: "+posx+" PosZ: "+posz);
+			//Debug.Log("Posx: "+posx+" PosZ: "+posz);
 		}
 		
 	}
 	
 	void rotateR()
 	{
-		Debug.Log("RotateR");
+		//Debug.Log("RotateR");
 		//Instantiate something;
 		rot++;
 			
 			if(rot> 3)
 				rot = 0;
 		player.transform.Rotate(0,90,0);
-		Debug.Log("Rot: "+rot);
+		//Debug.Log("Rot: "+rot);
 	}
 	void rotateL()
 	{
-		Debug.Log("RotateL");
+		//Debug.Log("RotateL");
 		//Instantiate something;
 		rot--;
 			
 			if(rot < 0)
 				rot = 3;
 		player.transform.Rotate(0,-90,0);
-		Debug.Log("Rot: "+rot);
+		//Debug.Log("Rot: "+rot);
 	}
 	
 	void action()
 	{
-		Debug.Log("Action");
+		//Debug.Log("Action");
 		switch(rot)
 			{
 				case 0:
@@ -272,6 +286,10 @@ public class Command : MonoBehaviour {
 			commandList.RemoveAt(commandList.Count - 1);
 		}
 		
+	}
+	public void Reset()
+	{
+		SceneManager.LoadScene("grid", LoadSceneMode.Single);
 	}
 	
 	bool walkable()
