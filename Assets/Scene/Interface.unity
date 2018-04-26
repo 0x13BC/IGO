@@ -3628,6 +3628,9 @@ MonoBehaviour:
   player: {fileID: 217662664}
   posx: 0
   posz: 0
+  Dechet: {fileID: 0}
+  panelWin: {fileID: 0}
+  listOrder: {fileID: 0}
 --- !u!1001 &1885995479
 Prefab:
   m_ObjectHideFlags: 0

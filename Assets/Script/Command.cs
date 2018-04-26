@@ -11,6 +11,7 @@ public class Command : MonoBehaviour {
 	public GameObject player = null;
 	public int posx,posz;
 	public GameObject Dechet;
+	public GameObject panelWin = null;
 	public Inventory listOrder = null;
 	
 	int rot = 0; // 0 Nord, 1 Est, 2 Sud,3 Ouest 
@@ -113,7 +114,11 @@ public class Command : MonoBehaviour {
 		//Debug.Log("z: "+toto);
 		
 		if(GameOver())
+		{
+			panelWin.gameObject.SetActive(true);
 			Debug.Log("BRAVOOOO!!!");
+		}
+			
 	}
 	
 	public void execute()
