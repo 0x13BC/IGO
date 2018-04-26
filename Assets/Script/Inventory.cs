@@ -13,10 +13,6 @@ public class Inventory : MonoBehaviour, IHasChanged {
 	void Start () {
 		HasChanged ();
 	}
-    public void reset()
-    {
-        GameObject instance = Instantiate(Resources.Load("Panel/Toutch", typeof(GameObject))) as GameObject;
-    }
 
     #region IHasChanged implementation
     public void HasChanged ()
