@@ -122,7 +122,9 @@ public class Command : MonoBehaviour {
 		foreach (CommandMethod func in commandList)
 			func();
 		ClearListCmd();
-	}
+       
+
+    }
 	public void takeList()
 	{
 		CreateListCmd(listOrder.order);
@@ -291,6 +293,8 @@ public class Command : MonoBehaviour {
 	{
 		SceneManager.LoadScene("grid", LoadSceneMode.Single);
 	}
+
+
 	
 	bool walkable()
 	{

@@ -15,7 +15,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         itemBeingDragged = gameObject;
         startPosition = transform.position;
         startParent = transform.parent;
-        //GetComponent<CanvasGroup>().blocksRaycasts = false;
+       GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 
     #endregion
@@ -34,7 +34,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public void OnEndDrag(PointerEventData eventData)
     {
         itemBeingDragged = null;
-        //GetComponent<CanvasGroup>().blocksRaycasts = true;
+        GetComponent<CanvasGroup>().blocksRaycasts = true;
         if (transform.parent == startParent)
         {
             transform.position = startPosition;

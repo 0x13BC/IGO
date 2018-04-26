@@ -30,4 +30,8 @@ public class Slot : MonoBehaviour, IDropHandler
         }
     }
     #endregion
+
+
+
+
 }

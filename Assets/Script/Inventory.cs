@@ -13,9 +13,13 @@ public class Inventory : MonoBehaviour, IHasChanged {
 	void Start () {
 		HasChanged ();
 	}
-	
-	#region IHasChanged implementation
-	public void HasChanged ()
+    public void reset()
+    {
+        GameObject instance = Instantiate(Resources.Load("Panel/Toutch", typeof(GameObject))) as GameObject;
+    }
+
+    #region IHasChanged implementation
+    public void HasChanged ()
 	{
 		System.Text.StringBuilder builder = new System.Text.StringBuilder();
 		builder.Append (" - ");
@@ -29,6 +33,8 @@ public class Inventory : MonoBehaviour, IHasChanged {
 		}
 	}
 	#endregion
+
+  
 }
 
 
