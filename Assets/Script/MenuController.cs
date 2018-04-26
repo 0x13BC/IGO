@@ -21,9 +21,7 @@ public class MenuController : MonoBehaviour {
         {
             if (isPaused)
             {
-                isPaused = false;
-                pauseMenu.SetActive(false);
-                Time.timeScale = 1f;
+                ResumeGame();
             }
             else
             {
@@ -36,7 +34,9 @@ public class MenuController : MonoBehaviour {
 
     public void ResumeGame()
     {
-
+        isPaused = false;
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     
