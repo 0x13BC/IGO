@@ -18,11 +18,21 @@ public class Command : MonoBehaviour {
 	float lengthmouv= 0.6f;
 	float timer = 0.0f;
 	int tour = 0;
-	
-	
-	//--------------- A DELETE ------------
-	
-	int [,] grid = new int[4,4]; // 0: Vide, 1: Robot, 2: Mur, 3: dechet, 4: Plante, 10: Exit
+
+    bool enMouv = false;
+    float saveMouv = 0f;
+    public float speedRob = 10f;
+    bool actionMouv = false;
+
+    bool enMouvDech = false;
+    float saveMouvDech = 0f;
+    public float speedDech = 10f;
+    bool actionMouvDech = false;
+
+
+    //--------------- A DELETE ------------
+
+    int [,] grid = new int[4,4]; // 0: Vide, 1: Robot, 2: Mur, 3: dechet, 4: Plante, 10: Exit
 	
 	//-------------------------------------
 	

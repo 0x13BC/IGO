@@ -10,9 +10,10 @@ public class Slot : MonoBehaviour, IDropHandler
         {
             if (transform.childCount > 0)
             {
-				//Debug.Log("Mon Cul");
+                //transform.GetChild(0).gameObject.SetActive(false);
+                //Debug.Log("Mon Cul");
                 return transform.GetChild(0).gameObject;
-				
+
             }
             return null;
         }
@@ -23,15 +24,18 @@ public class Slot : MonoBehaviour, IDropHandler
     {
         if (!item)
         {
-			//Debug.Log("CHild: "+transform.childCount);
+            //Debug.Log("CHild: "+transform.childCount);
             Drag.itemBeingDragged.transform.SetParent(transform);
-			ExecuteEvents.ExecuteHierarchy<IHasChanged>(gameObject, null,(x,y) => x.HasChanged());
-            
+            ExecuteEvents.ExecuteHierarchy<IHasChanged>(gameObject, null, (x, y) => x.HasChanged());
+
         }
     }
     #endregion
 
 
-
-
+    void Update()
+    {
+        if (transform.childCount > 0)
+            transform.GetChild(0).gameObject.SetActive(true);
+    }
 }
