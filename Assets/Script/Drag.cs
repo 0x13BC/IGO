@@ -37,7 +37,8 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         GetComponent<CanvasGroup>().blocksRaycasts = true;
         if (transform.parent == startParent)
         {
-            transform.position = startPosition;
+            //transform.position = startPosition;
+			Destroy(gameObject);
 			//Debug.Log("Je suis dans le vide");
         }
     }

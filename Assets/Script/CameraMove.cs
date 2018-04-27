@@ -7,6 +7,7 @@ public class CameraMove : MonoBehaviour {
 	bool rot = false;
 	float saveRot = 0f;
 	public float speedCam = 10f;
+	bool action = false;
 	
 	//var target.transform;
 	
@@ -18,11 +19,12 @@ public class CameraMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		if(Input.GetKeyDown(KeyCode.R) && !rot)
+		if( action && !rot)
 			{
 				Debug.Log("Titi");
 			//saveRot;
 			rot = true;
+			action = false;
 			saveRot = 0f;
 			}
 		if(rot)
@@ -51,5 +53,10 @@ public class CameraMove : MonoBehaviour {
 				rot = false;
 			}
 		}
+	}
+	
+	public void tournCam()
+	{
+		action = true;
 	}
 }
